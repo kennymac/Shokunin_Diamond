@@ -22,10 +22,26 @@ RSpec.describe 'Coordinate map for "D"', :type => :feature do
      end
 
      def grid
-     ''
+       
+       x = 0;
+       y = -@char_offset;
+       result = ""
+    
+      while y <= @char_offset do
+
+        x = -@char_offset;
+
+        while x <= @char_offset do
+          chr = get_char(x,y)
+          #puts("loop #{x},#{y} result: #{chr}")
+          result = result + chr
+          x+=1;
+        end
+        y+=1
+        result = result + "\n"
+      end
+      return result
      end
-
-
 
      def get_char_offset(char)
        char.ord - 65
@@ -78,7 +94,7 @@ RSpec.describe 'Coordinate map for "D"', :type => :feature do
     end
 
     it 'generates grid' do
-      expect(@model.grid()).to eq("   A    \n  B B  \n C   C \nD     D\n C   C \n  B B  \n   A    \n")
+      expect(@model.grid()).to eq("   A   \n  B B  \n C   C \nD     D\n C   C \n  B B  \n   A   \n")
     end
 
   end
