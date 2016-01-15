@@ -109,6 +109,26 @@ RSpec.describe 'Coordinate map for "D"', :type => :feature do
     end
   end
 
+  context('Given Z') do 
+    it 'A big diamond qill be put to console' do
+      model = TextGridModel.new('Z')
+      model.grid()
+    end
+  end
+
+  context('Given lowe case') do 
+    it 'For now it just renders both' do
+      model = TextGridModel.new('z')
+      model.grid()
+    end
+  end
+
+  context('Given char less than A') do 
+    it 'Nothing returned' do
+      model = TextGridModel.new('!')
+      expect(model.grid()).to eq("")
+    end
+  end
 
 # line 1
 # { A(0,3), B(1,2), C(2,1), D(3,0) }
