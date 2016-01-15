@@ -33,13 +33,15 @@ RSpec.describe 'Coordinate map for "D"', :type => :feature do
 
         while x <= @char_offset do
           chr = get_char(x,y)
-          #puts("loop #{x},#{y} result: #{chr}")
           result = result + chr
           x+=1;
         end
         y+=1
         result = result + "\n"
       end
+
+      puts("result:\n#{result}")
+
       return result
      end
 
