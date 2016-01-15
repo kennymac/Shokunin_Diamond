@@ -15,7 +15,7 @@ class TextGridModel
    end
 
    def get_char_offset(char)
-     0
+     char.ord - 65
    end
 
    private :get_char_offset
