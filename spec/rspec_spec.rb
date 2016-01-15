@@ -44,27 +44,27 @@ RSpec.describe 'Coordinate map for "D"', :type => :feature do
     end
 
     it 'line 1 { A(0,3), B(1,2), C(2,1), D(3,0) } returns expected characters' do
-      expect(@model.get_char(0,3)).to eq(true)
-      expect(@model.get_char(1,2)).to eq(true)
-      expect(@model.get_char(2,1)).to eq(true)
-      expect(@model.get_char(3,0)).to eq(true)
+      expect(@model.get_char(0,3)).to eq('A')
+      expect(@model.get_char(1,2)).to eq('B')
+      expect(@model.get_char(2,1)).to eq('C')
+      expect(@model.get_char(3,0)).to eq('D')
     end
 
     it 'line 4 { A’(0,-3), B(1,-2), C(2,-1), D(3,0) } returns expected characters' do
-      expect(@model.get_char(0,-3)).to eq(true)
-      expect(@model.get_char(1,-2)).to eq(true)
-      expect(@model.get_char(2,-1)).to eq(true)
-      expect(@model.get_char(3,0)).to eq(true)
+      expect(@model.get_char(0,-3)).to eq('A')
+      expect(@model.get_char(1,-2)).to eq('B')
+      expect(@model.get_char(2,-1)).to eq('C')
+      expect(@model.get_char(3,0)).to eq('D')
     end
 
     it 'not on centre line' do
-      expect(@model.get_char(0,-3)).to eq(true)
-      expect(@model.get_char(0,-2)).to eq(false)
-      expect(@model.get_char(0,-1)).to eq(false)
-      expect(@model.get_char(0,0)).to eq(false)
-      expect(@model.get_char(0,3)).to eq(true)
-      expect(@model.get_char(0,2)).to eq(false)
-      expect(@model.get_char(0,1)).to eq(false)
+      expect(@model.get_char(0,-3)).to eq('A')
+      expect(@model.get_char(0,-2)).to eq(' ')
+      expect(@model.get_char(0,-1)).to eq(' ')
+      expect(@model.get_char(0, 0)).to eq(' ')
+      expect(@model.get_char(0, 3)).to eq('A')
+      expect(@model.get_char(0, 2)).to eq(' ')
+      expect(@model.get_char(0, 1)).to eq(' ')
     end
 
   end
