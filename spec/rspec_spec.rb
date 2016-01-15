@@ -14,7 +14,7 @@ RSpec.describe 'Coordinate map for "D"', :type => :feature do
      end
 
      def get_char(x,y)
-        ((x+y).abs == char_offset)
+        ((x+y).abs == char_offset || (x-y).abs == char_offset)
      end
 
      def get_char_offset(char)
