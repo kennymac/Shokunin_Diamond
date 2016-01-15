@@ -57,6 +57,16 @@ RSpec.describe 'Coordinate map for "D"', :type => :feature do
       expect(@model.get_char(3,0)).to eq(true)
     end
 
+    it 'not on centre line' do
+      expect(@model.get_char(0,-3)).to eq(true)
+      expect(@model.get_char(0,-2)).to eq(false)
+      expect(@model.get_char(0,-1)).to eq(false)
+      expect(@model.get_char(0,0)).to eq(false)
+      expect(@model.get_char(0,3)).to eq(true)
+      expect(@model.get_char(0,2)).to eq(false)
+      expect(@model.get_char(0,1)).to eq(false)
+    end
+
   end
 
 
