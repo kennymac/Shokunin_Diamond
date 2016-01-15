@@ -57,13 +57,7 @@ RSpec.describe 'Coordinate map for "D"', :type => :feature do
 
   before :all do
     @model = TextGridModel.new('D')
- end
-
-  # context('Given D') do 
-  #   it '(0, 3) should contain a character' do
-  #     expect(@model.cellContainsCharacter(0,3)).to eq(true)
-  #   end
-  # end
+  end
 
   context('Given input D') do 
     it 'charOffset should equal 3' do
@@ -99,6 +93,20 @@ RSpec.describe 'Coordinate map for "D"', :type => :feature do
       expect(@model.grid()).to eq("   A   \n  B B  \n C   C \nD     D\n C   C \n  B B  \n   A   \n")
     end
 
+  end
+
+  context('Given C') do 
+    it 'A correct diamond should be returned' do
+      model = TextGridModel.new('C')
+      expect(model.grid()).to eq("  A  \n B B \nC   C\n B B \n  A  \n")
+    end
+  end
+
+  context('Given A') do 
+    it 'A single character diamond should be returned' do
+      model = TextGridModel.new('A')
+      expect(model.grid()).to eq("A\n")
+    end
   end
 
 
